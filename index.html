@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve's Build | Premium Architectural New Homes & Master Carpentry</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#dc2626',       /* Steve's Build Crimson Red */
+                            redhover: '#b91c1c',  /* Deep Crimson */
+                            black: '#070708',     /* Rich Obsidian Black */
+                            dark: '#0f0f12',      /* Premium Matte Slate-Black */
+                            darkCard: '#15151a',  /* High-Contrast Card Background */
+                            slate: '#8b949e',     /* Elegant Cool Gray */
+                            light: '#f4f5f6'      /* Off-White */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Space Grotesk (Modern Industrial Accent) & Inter (Premium UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070708;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            min-height: 100vh;
+        }
+        h1, h2, h3, .brand-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        /* Minimalist fine-line construction grid */
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(rgba(220, 38, 38, 0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 38, 38, 0.012) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        /* Seamless Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070708;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dc2626;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b91c1c;
+        }
+    </style>
+</head>
+<body class="blueprint-grid text-brand-light antialiased overflow-x-hidden">
+
+    <!-- 1. Header & Navigation (Fixed Minimalist Navbar) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-black/95 backdrop-blur-md border-b border-white/5 py-3 md:py-4">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+            
+            <!-- BRAND LOGO ZONE - Exact User Uploaded Image File -->
+            <a href="#" class="flex items-center">
+                <img src="profile logo Steves Build.jpg" alt="Steve's Build" class="h-10 md:h-12 w-auto object-contain block" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'text-white font-bold text-lg md:text-xl tracking-wider uppercase font-display\'>Steve\'s <span class=\'text-brand-red\'>Build</span></span>'">
+            </a>
+
+            <!-- Desktop Menu (Slimline Elegant) -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs font-medium uppercase tracking-[0.2em]">
+                <a href="#" class="text-brand-red transition-colors duration-300">Home</a>
+                <a href="#about" class="text-brand-slate hover:text-white transition-colors duration-300">Our Craft</a>
+                <a href="#services" class="text-brand-slate hover:text-white transition-colors duration-300">Services</a>
+                <a href="#portfolio" class="text-brand-slate hover:text-white transition-colors duration-300">Selected Works</a>
+                <a href="#roadmap" class="text-brand-slate hover:text-white transition-colors duration-300">Build Process</a>
+                <a href="#contact" class="bg-brand-red hover:bg-brand-redhover text-white px-5 py-2.5 rounded-none shadow-[0_0_15px_rgba(220,38,38,0.2)] hover:shadow-[0_0_25px_rgba(220,38,38,0.4)] transition-all duration-300">Get in Touch</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="lg:hidden text-white focus:outline-none transition-colors duration-300">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Full-width Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-brand-black/98 border-t border-white/5 py-8 px-6 shadow-2xl flex flex-col space-y-5 text-xs font-medium tracking-[0.2em] uppercase">
+            <a href="#" class="mobile-nav-link text-brand-red">Home</a>
+            <a href="#about" class="mobile-nav-link text-brand-slate">Our Craft</a>
+            <a href="#services" class="mobile-nav-link text-brand-slate">Services</a>
+            <a href="#portfolio" class="mobile-nav-link text-brand-slate">Selected Works</a>
+            <a href="#roadmap" class="mobile-nav-link text-brand-slate">Build Process</a>
+            <a href="#contact" class="bg-brand-red text-white text-center py-3.5 rounded-none shadow-[0_0_15px_rgba(220,38,38,0.2)]">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section (Fully Fluid & Autogrowing Height to prevent Google Sites overlap) -->
+    <section class="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-brand-black pt-28 pb-20 lg:py-0">
+        <!-- Background Overlay Layout -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent z-10"></div>
+            <!-- Premium New Zealand Luxury Architectural Wooden Home Backdrop -->
+            <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=1920&q=80" alt="Steve's Build Luxury NZ Home Architecture" class="w-full h-full object-cover object-center scale-100 opacity-40">
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 w-full text-white">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center space-x-3 mb-6">
+                    <span class="w-8 h-[1px] bg-brand-red"></span>
+                    <span class="text-brand-red tracking-[0.3em] text-[10px] md:text-xs uppercase font-bold">New Home Builds & Master Carpentry</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-light tracking-tight leading-none mb-6 uppercase">
+                    WE BUILD BETTER.<br><span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-red">TOGETHER.</span>
+                </h1>
+                <p class="text-sm md:text-lg text-brand-slate mb-10 leading-relaxed font-light max-w-2xl">
+                    We specialize in premium structural timber framing, new home carpentry, and high-end timber finishes. Building gorgeous, structurally flawless New Zealand homes from the first stud to the final architectural cladding.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#portfolio" class="bg-brand-red hover:bg-brand-redhover text-white text-center px-8 py-4 font-bold text-xs tracking-[0.25em] uppercase transition-all rounded-none shadow-[0_4px_20px_rgba(220,38,38,0.25)] flex items-center justify-center space-x-3 group">
+                        <span>Explore Our Craft</span>
+                        <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="#contact" class="border border-white/15 hover:border-brand-red hover:bg-brand-red/5 text-white text-center px-8 py-4 font-bold text-xs tracking-[0.25em] uppercase transition-all rounded-none flex items-center justify-center">
+                        <span>Request Custom Build Plan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sleek Scroll Indicator (Hidden on small embeds) -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden sm:block">
+            <a href="#about" class="text-brand-slate hover:text-brand-red transition-colors">
+                <i class="fa-solid fa-chevron-down text-lg"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. About Section (The Art of Carpentry) -->
+    <section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 lg:px-8 border-b border-white/5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left: Text Core -->
+            <div class="lg:col-span-7">
+                <span class="text-brand-red text-xs font-bold tracking-[0.3em] block mb-4 uppercase">Steve's Build Standard</span>
+                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-6">Built on Precision.<br>Crafted with Timber.</h2>
+                <div class="w-20 h-[2px] bg-brand-red mb-8"></div>
+                
+                <p class="text-brand-slate text-sm md:text-base leading-relaxed mb-6 font-light">
+                    At Steve’s Build, we believe a home is only as outstanding as the quality of its bones. We are master carpenters dedicated exclusively to new residential builds and structural framing. Unlike standard multi-contractors, we focus completely on the carpentry trade.
+                </p>
+                <p class="text-brand-slate text-sm md:text-base leading-relaxed mb-10 font-light">
+                    We raise high-performance structural timber skeletons, set complex rafters, and install fine cedar and weatherboard cladding. We collaborate directly with trusted architectural partners and foundation specialists, taking full responsibility for the structure once the slab is poured.
+                </p>
+                
+                <!-- Carpentry Precision Metrics -->
+                <div class="grid grid-cols-3 gap-4 md:gap-6 pt-10 border-t border-white/5">
+                    <div>
+                        <div class="text-2xl md:text-4xl font-bold text-white font-display">150+</div>
+                        <div class="text-[9px] md:text-[10px] font-bold text-brand-slate uppercase tracking-wider mt-1">Timber Frames Raised</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-4xl font-bold text-white font-display">100%</div>
+                        <div class="text-[9px] md:text-[10px] font-bold text-brand-slate uppercase tracking-wider mt-1">Millimeter Accuracy</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-4xl font-bold text-brand-red font-display">LBP</div>
+                        <div class="text-[9px] md:text-[10px] font-bold text-brand-slate uppercase tracking-wider mt-1">Licensed Practitioners</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Premium Wooden Detail Frame -->
+            <div class="lg:col-span-5 relative">
+                <div class="absolute -top-3 -left-3 w-10 h-10 border-t border-l border-brand-red"></div>
+                <div class="absolute -bottom-3 -right-3 w-10 h-10 border-b border-r border-brand-red"></div>
+                <div class="bg-brand-dark border border-white/10 p-2 md:p-3 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?auto=format&fit=crop&w=800&q=80" alt="Master Carpenter Wood Framing" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Core Services Section (Carpentry & New Home Focus) -->
+    <section id="services" class="py-24 md:py-32 bg-brand-dark border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <span class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase block mb-4">Our Master Services</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 uppercase">Specialized Carpentry</h2>
+                <div class="w-20 h-[2px] bg-brand-red mx-auto mb-6"></div>
+                <p class="text-brand-slate font-light text-xs md:text-sm">We provide expert timber carpentry. No generic handiwork—just pure, high-precision building craftsmanship.</p>
+            </div>
+
+            <!-- Services Grid System -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-brand-black border border-white/5 p-8 md:p-10 hover:border-brand-red transition-all duration-300 group hover:-translate-y-2 relative">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-red transition-all"></div>
+                    <div class="text-brand-red text-3xl mb-6">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-wide group-hover:text-brand-red transition-colors">Bespoke New Builds</h3>
+                    <p class="text-brand-slate text-xs md:text-sm leading-relaxed font-light">
+                        We build custom stand-alone new homes from architectural plans. From the primary framing layout through the final premium exterior claddings, we execute with complete craftsmanship.
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-brand-black border border-white/5 p-8 md:p-10 hover:border-brand-red transition-all duration-300 group hover:-translate-y-2 relative">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-red transition-all"></div>
+                    <div class="text-brand-red text-3xl mb-6">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-wide group-hover:text-brand-red transition-colors">Timber Framing & Trusses</h3>
+                    <p class="text-brand-slate text-xs md:text-sm leading-relaxed font-light">
+                        Precision-engineered timber skeleton framing, roof trusses, rafters, load-bearing walls, and internal wooden partitions. Raising straight, true frames built to outlast generations.
+                    </p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-brand-black border border-white/5 p-8 md:p-10 hover:border-brand-red transition-all duration-300 group hover:-translate-y-2 relative">
+                    <div class="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-red transition-all"></div>
+                    <div class="text-brand-red text-3xl mb-6">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4 uppercase tracking-wide group-hover:text-brand-red transition-colors">Architectural Cladding</h3>
+                    <p class="text-brand-slate text-xs md:text-sm leading-relaxed font-light">
+                        Specialized cedar, larch, shiplap, and composite cladding installations. Designing gorgeous, weather-tight, custom timber facades and premium architectural outdoor decks.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 5. Portfolio Section (Interactive Project Display) -->
+    <section id="portfolio" class="py-24 md:py-32 max-w-7xl mx-auto px-6 lg:px-8 border-b border-white/5">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-brand-red text-xs font-bold tracking-[0.3em] block mb-4 uppercase">Masterpieces Raised</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white uppercase">Featured Builds</h2>
+                <div class="w-20 h-[2px] bg-brand-red mt-6"></div>
+            </div>
+
+            <!-- Custom Category Filters -->
+            <div class="flex flex-wrap gap-2 text-[10px] md:text-[11px] font-semibold tracking-widest uppercase mt-6 md:mt-0">
+                <button class="filter-btn active px-4 py-2.5 md:px-5 md:py-3 bg-brand-red text-white" data-category="all">All Carpentry</button>
+                <button class="filter-btn px-4 py-2.5 md:px-5 md:py-3 bg-brand-dark hover:bg-brand-red/10 border border-white/10 text-brand-slate hover:text-white transition-all" data-category="newbuild">New Homes</button>
+                <button class="filter-btn px-4 py-2.5 md:px-5 md:py-3 bg-brand-dark hover:bg-brand-red/10 border border-white/10 text-brand-slate hover:text-white transition-all" data-category="framing">Timber Framing</button>
+                <button class="filter-btn px-4 py-2.5 md:px-5 md:py-3 bg-brand-dark hover:bg-brand-red/10 border border-white/10 text-brand-slate hover:text-white transition-all" data-category="cladding">Architectural Cladding</button>
+            </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 1 (New Homes) -->
+            <div class="portfolio-item group bg-brand-dark border border-white/5 cursor-pointer transition-all duration-300" data-category="newbuild" onclick="openModal('project-1')">
+                <div class="relative h-60 md:h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=800&q=80" alt="Steve's Build New Home" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-black/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="bg-brand-red text-white text-[11px] font-bold tracking-[0.2em] uppercase px-5 py-3">View Frame Details <i class="fa-solid fa-expand ml-2"></i></span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[9px] font-bold text-brand-red tracking-[0.25em] uppercase">New Home Build</span>
+                    <h3 class="text-lg md:text-xl font-bold text-white mt-2 group-hover:text-brand-red transition-colors uppercase">The Cedar Ridge Pavilion</h3>
+                    <p class="text-brand-slate text-xs mt-3 line-clamp-2 font-light">Custom timber framing, high-end exposed architectural trusses, and vertical cedar shiplap exterior cladding integration.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 (Framing) -->
+            <div class="portfolio-item group bg-brand-dark border border-white/5 cursor-pointer transition-all duration-300" data-category="framing" onclick="openModal('project-2')">
+                <div class="relative h-60 md:h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Steve's Build Timber Frame" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-black/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="bg-brand-red text-white text-[11px] font-bold tracking-[0.2em] uppercase px-5 py-3">View Frame Details <i class="fa-solid fa-expand ml-2"></i></span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[9px] font-bold text-brand-red tracking-[0.25em] uppercase">Timber Framing</span>
+                    <h3 class="text-lg md:text-xl font-bold text-white mt-2 group-hover:text-brand-red transition-colors uppercase">Ridgeview Structural Frame</h3>
+                    <p class="text-brand-slate text-xs mt-3 line-clamp-2 font-light">Complex timber rafters, dynamic ceiling joist systems, and precision structural wood framing for a multi-level contemporary estate.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 (Cladding) -->
+            <div class="portfolio-item group bg-brand-dark border border-white/5 cursor-pointer transition-all duration-300" data-category="cladding" onclick="openModal('project-3')">
+                <div class="relative h-60 md:h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Steve's Build Timber Detail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-black/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="bg-brand-red text-white text-[11px] font-bold tracking-[0.2em] uppercase px-5 py-3">View Frame Details <i class="fa-solid fa-expand ml-2"></i></span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[9px] font-bold text-brand-red tracking-[0.25em] uppercase">Architectural Cladding</span>
+                    <h3 class="text-lg md:text-xl font-bold text-white mt-2 group-hover:text-brand-red transition-colors uppercase">Cliffs-Edge Larch Facade</h3>
+                    <p class="text-brand-slate text-xs mt-3 line-clamp-2 font-light">Custom architectural timber cladding integration with concealed weatherproofing barriers and high-performance insulation framing.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 6. Project Details Modal (Hidden Overlay) -->
+    <div id="project-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Modal Backdrop -->
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true" onclick="closeModal()">
+                <div class="absolute inset-0 bg-brand-black/95 backdrop-blur-sm"></div>
+            </div>
+
+            <!-- Alignment Helper -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Panel Main Shell -->
+            <div class="inline-block align-bottom bg-brand-dark text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border border-white/10">
+                <!-- Close Button Control -->
+                <div class="absolute top-4 right-4 z-10">
+                    <button onclick="closeModal()" class="text-brand-slate hover:text-brand-red bg-brand-black rounded-none p-2.5 transition-all border border-white/5 shadow-lg">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Inject Destination -->
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Corporate Testimonials -->
+    <section class="py-24 md:py-32 bg-brand-black border-t border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-brand-red text-xs font-bold tracking-[0.3em] block mb-4 uppercase">Craft Recognition</span>
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-12 uppercase">Endorsed by Architects</h2>
+            
+            <!-- Slides Carousel Box -->
+            <div class="relative overflow-hidden min-h-[180px]">
+                <div id="testimonial-container" class="transition-opacity duration-500">
+                    <blockquote class="text-base md:text-2xl text-brand-light italic leading-relaxed mb-6 font-light">
+                        "Steve's carpentry crews have raised timber frames on three of our luxury home builds. Their framing is structurally dead-straight, millimeter-precise, and makes cladding installation totally seamless. They are our go-to carpenters."
+                    </blockquote>
+                    <cite class="text-brand-red font-bold block not-italic text-xs uppercase tracking-widest">— Julian Sterling, Lead Architect · Sterling & Partners</cite>
+                </div>
+            </div>
+
+            <!-- Controller dots -->
+            <div class="flex justify-center space-x-3 mt-10">
+                <button onclick="switchTestimonial(0)" class="testi-dot w-2 h-2 bg-brand-red transition-all"></button>
+                <button onclick="switchTestimonial(1)" class="testi-dot w-2 h-2 bg-white/20 hover:bg-brand-red transition-all"></button>
+                <button onclick="switchTestimonial(2)" class="testi-dot w-2 h-2 bg-white/20 hover:bg-brand-red transition-all"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Execution Roadmap (Digital Blueprint Plan) -->
+    <section id="roadmap" class="py-24 md:py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+            <span class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase block mb-4">The Build Roadmap</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 uppercase">How We Raise Frames</h2>
+            <div class="w-20 h-[2px] bg-brand-red mx-auto mb-6"></div>
+            <p class="text-brand-slate font-light text-xs md:text-sm">We orchestrate clean, professional, and rapid carpentry development phases for standard and custom timber structures.</p>
+        </div>
+
+        <!-- Horizontal Step Timeline -->
+        <div class="relative flex flex-col md:flex-row justify-between items-start gap-12 md:gap-4">
+            <!-- Central Line (Desktop Only) -->
+            <div class="hidden md:block absolute top-[30px] left-0 w-full h-[1px] bg-white/10 -z-10"></div>
+
+            <!-- Stage 1 -->
+            <div class="flex-1 text-center md:text-left relative">
+                <div class="relative inline-flex items-center justify-center w-14 h-14 bg-brand-black text-brand-red text-sm font-bold mb-6 mx-auto md:mx-0 shadow-lg border border-brand-red">
+                    01
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Planing & Specs</h3>
+                <p class="text-brand-slate text-xs leading-relaxed font-light font-sans">We carefully inspect your architect's framing layout plans, load paths, lumber requirements, and detail specifications.</p>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="flex-1 text-center md:text-left">
+                <div class="relative inline-flex items-center justify-center w-14 h-14 bg-brand-black text-brand-red text-sm font-bold mb-6 mx-auto md:mx-0 shadow-lg border border-brand-red">
+                    02
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Lumber Pre-Cut</h3>
+                <p class="text-brand-slate text-xs leading-relaxed font-light font-sans">Timber sections are measured, calculated, and high-precision pre-cut to secure absolutely tight joinery joints.</p>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="flex-1 text-center md:text-left">
+                <div class="relative inline-flex items-center justify-center w-14 h-14 bg-brand-black text-brand-red text-sm font-bold mb-6 mx-auto md:mx-0 shadow-lg border border-brand-red">
+                    03
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Frame Raising</h3>
+                <p class="text-brand-slate text-xs leading-relaxed font-light font-sans">Our framing crew coordinates on the site, standing and securing timber studs, lintels, joists, and top plates.</p>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="flex-1 text-center md:text-left">
+                <div class="relative inline-flex items-center justify-center w-14 h-14 bg-brand-black text-brand-red text-sm font-bold mb-6 mx-auto md:mx-0 shadow-lg border border-brand-red">
+                    04
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wide">Cladding & Joists</h3>
+                <p class="text-brand-slate text-xs leading-relaxed font-light font-sans">Rafter configurations and architectural wood cladding panels are wrapped and installed, yielding a weather-tight house skeleton.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contact Us & Interactive Submission Form -->
+    <section id="contact" class="py-24 md:py-32 bg-brand-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Left Details -->
+                <div>
+                    <span class="text-brand-red text-xs font-bold tracking-[0.3em] block mb-4 uppercase">Discuss Your Plan</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 uppercase">Let's Frame Your Future New Home</h2>
+                    <p class="text-brand-slate leading-relaxed mb-10 font-light text-xs md:text-sm">Have structural blueprints ready? Need specialized carpenters who understand true structural timber accuracy? Connect with Steve's Build for an exhaustive carpentry estimate.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-brand-red text-xl mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wide">New Zealand Operations</h4>
+                                <p class="text-brand-slate text-sm font-light mt-1">Auckland & surrounding custom residential developments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-brand-red text-xl mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wide">Direct Contact</h4>
+                                <p class="text-brand-slate text-sm font-light mt-1">+64 (021) 555-0182 / Steve</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-brand-red text-xl mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wide">Email Inquiries</h4>
+                                <p class="text-brand-slate text-sm font-light mt-1 font-sans">steve@stevesbuild.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Carpentry Form -->
+                <div class="bg-brand-black border border-white/5 p-6 md:p-10 shadow-2xl relative">
+                    
+                    <!-- Form Submission Success Layer (Initially Hidden) -->
+                    <div id="form-success" class="absolute inset-0 bg-brand-black z-10 flex flex-col items-center justify-center text-center p-8 hidden border border-brand-red">
+                        <div class="text-brand-red text-5xl mb-6">
+                            <i class="fa-solid fa-circle-check animate-bounce"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 uppercase tracking-wide">Carpentry Inquiry Received</h3>
+                        <p class="text-brand-slate text-xs md:text-sm max-w-sm mb-6">Steve will look over your framing specs or cladding blueprint parameters and get back to you within 24 working hours.</p>
+                        <button onclick="resetContactForm()" class="bg-brand-red hover:bg-brand-redhover text-white text-xs font-semibold tracking-widest uppercase px-6 py-3 transition-all focus:outline-none shadow-md">Submit Another Query</button>
+                    </div>
+
+                    <!-- Client Spec Form -->
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <h3 class="text-lg font-bold uppercase tracking-wider mb-6 text-brand-red border-b border-white/5 pb-4">Request Custom Carpentry Feasibility</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[9px] font-bold uppercase tracking-widest text-brand-slate mb-2">Name *</label>
+                                <input type="text" required class="w-full bg-brand-dark border border-white/10 focus:border-brand-red outline-none px-4 py-3 text-white text-sm transition-all rounded-none">
+                            </div>
+                            <div>
+                                <label class="block text-[9px] font-bold uppercase tracking-widest text-brand-slate mb-2">Email *</label>
+                                <input type="email" required class="w-full bg-brand-dark border border-white/10 focus:border-brand-red outline-none px-4 py-3 text-white text-sm transition-all rounded-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[9px] font-bold uppercase tracking-widest text-brand-slate mb-2">Scope of Work</label>
+                            <select class="w-full bg-brand-dark border border-white/10 focus:border-brand-red outline-none px-4 py-3 text-white text-sm transition-all cursor-pointer rounded-none">
+                                <option value="framing">Complete Timber Framing & Rafters</option>
+                                <option value="cladding">Architectural Timber Cladding & Decking</option>
+                                <option value="full">Full Custom New Home Carpentry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[9px] font-bold uppercase tracking-widest text-brand-slate mb-2">Project Brief & Blueprint Dimensions *</label>
+                            <textarea required rows="4" placeholder="Describe the framing requirements, structural timber dimensions, and expected timeline constraints..." class="w-full bg-brand-dark border border-white/10 focus:border-brand-red outline-none px-4 py-3 text-white text-sm transition-all rounded-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-red hover:bg-brand-redhover text-white text-xs font-bold tracking-widest uppercase py-4 transition-all shadow-lg hover:shadow-brand-red/15 flex items-center justify-center space-x-3 focus:outline-none rounded-none">
+                            <span>Submit Blueprints to Steve</span>
+                            <i class="fa-solid fa-hammer text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer Section -->
+    <footer class="bg-brand-black border-t border-white/5 py-12 text-brand-slate text-xs">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="text-white font-bold tracking-widest text-sm uppercase">Steve's <span class="text-brand-red">Build</span></span>
+                <span class="text-white/20">|</span>
+                <span>© 2026 Steve's Build Master Carpentry Group. All rights reserved.</span>
+            </div>
+            <!-- Social Icons -->
+            <div class="flex space-x-6 text-base">
+                <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-red transition-colors"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT SYSTEM ENGINE ================= -->
+    <script>
+        // A. Sticky Header Transition
+        const navbar = document.getElementById('navbar');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-brand-black', 'py-1.5', 'shadow-2xl');
+                navbar.classList.remove('bg-brand-black/95', 'py-3', 'md:py-4');
+            } else {
+                navbar.classList.add('bg-brand-black/95', 'py-3', 'md:py-4');
+                navbar.classList.remove('bg-brand-black', 'py-1.5', 'shadow-2xl');
+            }
+        });
+
+        // B. Mobile Menu Trigger Action
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // C. Portfolio Category Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-red', 'text-white');
+                    b.classList.add('bg-brand-dark', 'border-white/10', 'text-brand-slate');
+                });
+                btn.classList.add('active', 'bg-brand-red', 'text-white');
+                btn.classList.remove('bg-brand-dark', 'border-white/10', 'text-brand-slate');
+
+                const selectedCategory = btn.getAttribute('data-category');
+
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // D. Structural Projects Specification Dictionary (Carpentry Focused)
+        const projectDetails = {
+            'project-1': {
+                title: 'The Cedar Ridge Pavilion',
+                category: 'New Home Build / Custom Wood Structure',
+                image: 'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=1000&q=80',
+                stats: [
+                    { label: 'Timber Grade', value: 'SG8 Treated Pine & Oregon Cedar' },
+                    { label: 'Truss Complexity', value: 'High Architectural Exposure' },
+                    { label: 'Envelope Area', value: '380 SQM Framing Envelope' },
+                    { label: 'Structural Accuracy', value: 'Tolerance Less Than 1.5mm' }
+                ],
+                desc: 'Raised on a prepared slab, this bespoke architectural estate boasts heavy exposed load-bearing ceiling columns and custom-pitched timber trusses. We managed the timber specs and executed vertical cedar board installations with continuous ventilation channels to achieve an absolute weather-tight envelope.'
+            },
+            'project-2': {
+                title: 'Ridgeview Structural Frame',
+                category: 'New Timber Framing & Roof Trusses',
+                image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
+                stats: [
+                    { label: 'Wall Framing Studs', value: '45x90 Treated structural lumber' },
+                    { label: 'Ceiling Truss Span', value: '14 Meters Span Joist System' },
+                    { label: 'Timber Volume', value: '32 Cubic Meters Built' },
+                    { label: 'Framing Duration', value: '14 Days On-Site Raising' }
+                ],
+                desc: 'A structural timber framing showcase displaying multi-level custom load transitions. Steve\'s Build hand-cut the complex valleys and standard jack rafters directly on-site. The entire framework incorporates high-tension timber connectors to comply with strict regional wind loading codes.'
+            },
+            'project-3': {
+                title: 'Cliffs-Edge Larch Facade',
+                category: 'Architectural Cladding / Exterior Fine Finish',
+                image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=80',
+                stats: [
+                    { label: 'Timber Species', value: 'Siberian Larch (Vertical Profiles)' },
+                    { label: 'Fasteners', value: '316 Marine Grade Stainless Screws' },
+                    { label: 'Thermal Battens', value: '20mm Cavity Batten Frame' },
+                    { label: 'Weather Barrier', value: 'Pro Clima SOLITEX EXTASANA' }
+                ],
+                desc: 'High-performance timber facade cladding on a coastal cliff estate. This task demanded flawless, straight cladding joint alignment. We installed structural cavity battens, premium thermal wrap systems, and individually aligned larch profile planks with perfectly spaced stainless fasteners.'
+            }
+        };
+
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(projectId) {
+            const data = projectDetails[projectId];
+            if (!data) return;
+
+            modalContent.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="h-64 md:h-[480px]">
+                        <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex flex-col justify-between bg-brand-dark text-white">
+                        <div>
+                            <span class="text-[9px] font-bold text-brand-red uppercase tracking-[0.25em]">${data.category}</span>
+                            <h3 class="text-2xl font-black uppercase mt-2 mb-6 tracking-tight">${data.title}</h3>
+                            <p class="text-brand-slate text-xs leading-relaxed mb-6 font-light">${data.desc}</p>
+                            
+                            <!-- Specs Table Matrix -->
+                            <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6">
+                                ${data.stats.map(s => `
+                                    <div>
+                                        <div class="text-[9px] text-brand-red font-bold uppercase tracking-wider">${s.label}</div>
+                                        <div class="text-xs font-semibold text-white mt-1">${s.value}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#contact" onclick="closeModal()" class="inline-block w-full text-center bg-brand-red hover:bg-brand-redhover text-white font-bold text-xs tracking-wider uppercase py-4 rounded-none shadow-md transition-all">Request Estimate for This Craft</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // E. Client Testimonial Database
+        const testimonials = [
+            {
+                quote: `"Steve's carpentry crews have raised timber frames on three of our luxury home builds. Their framing is structurally dead-straight, millimeter-precise, and makes cladding installation totally seamless. They are our go-to carpenters."`,
+                author: "— Julian Sterling, Lead Architect · Sterling & Partners"
+            },
+            {
+                quote: `"Steve is an absolute wood specialist. They completed the timber envelope framing and the complex larch vertical cladding on our oceanfront new build. The quality of their joinery was highly praised by our building inspector."`,
+                author: "— Marcus Vance, Custom Homeowner · St Heliers"
+            },
+            {
+                quote: `"Highly recommend Steve's Build. Quick estimates, zero lumber waste, and an extremely professional framing crew. Their custom architectural decking details completely transformed the exterior of our modern new home."`,
+                author: "— Sarah Jenkins, Custom Residential Builder · Auckland"
+            }
+        ];
+
+        const tContainer = document.getElementById('testimonial-container');
+        const tDots = document.querySelectorAll('.testi-dot');
+        let currentTesti = 0;
+
+        function switchTestimonial(index) {
+            currentTesti = index;
+            tDots.forEach((dot, idx) => {
+                if (idx === index) {
+                    dot.classList.add('bg-brand-red');
+                    dot.classList.remove('bg-white/20');
+                } else {
+                    dot.classList.remove('bg-brand-red');
+                    dot.classList.add('bg-white/20');
+                }
+            });
+
+            tContainer.style.opacity = '0';
+            setTimeout(() => {
+                tContainer.innerHTML = `
+                    <blockquote class="text-lg md:text-2xl text-brand-light italic leading-relaxed mb-6 font-light">
+                        ${testimonials[index].quote}
+                    </blockquote>
+                    <cite class="text-brand-red font-bold block not-italic text-xs uppercase tracking-widest">${testimonials[index].author}</cite>
+                `;
+                tContainer.style.opacity = '1';
+            }, 300);
+        }
+
+        // Auto transition slides
+        setInterval(() => {
+            let next = (currentTesti + 1) % testimonials.length;
+            switchTestimonial(next);
+        }, 8000);
+
+        // F. Client Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const successOverlay = document.getElementById('form-success');
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            successOverlay.classList.remove('hidden');
+            successOverlay.classList.add('animate-[fadeIn_0.3s_ease-out]');
+        }
+
+        function resetContactForm() {
+            contactForm.reset();
+            successOverlay.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
